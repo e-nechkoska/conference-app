@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavItem } from './core/models/nav-item';
 
 @Component({
   selector: 'ca-root',
@@ -6,4 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  navItems: NavItem[] = [
+    {
+      name: 'Speakers',
+      link: 'speakers'
+    },
+    {
+      name: 'Sessions',
+      link: 'sessions'
+    }
+  ];
 }
