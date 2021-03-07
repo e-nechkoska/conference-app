@@ -1,8 +1,0 @@
-<button (click)="showAllSpeakers()">Show all</button>
-<button (click)="addNewSpeaker()">Add speaker</button>
-
-<div *ngFor="let speaker of speakers">
-  <p *ngIf="showAll || speaker.active">Speaker name: {{speaker.name}}</p>
-</div>
-
-<ca-speakers></ca-speakers>
