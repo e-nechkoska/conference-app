@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SessionsComponent } from './components/sessions.component';
+import { SessionsPageComponent } from './pages/sessions-page.component';
 
 const routes: Routes = [
   {
     path: 'sessions',
-    component: SessionsComponent
+    component: SessionsPageComponent
   }
 ];
 
