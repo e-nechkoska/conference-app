@@ -13,10 +13,10 @@ import { SessionsModule } from './sessions/sessions.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CoreModule,
     SpeakersModule,
-    SessionsModule
+    SessionsModule,
+    AppRoutingModule
   ],
   providers: [
   ],
