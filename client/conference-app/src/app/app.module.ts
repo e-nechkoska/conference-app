@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SpeakersModule } from './speakers/speakers.module';
 import { SessionsModule } from './sessions/sessions.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { SessionsModule } from './sessions/sessions.module';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     CoreModule,
     SpeakersModule,
     SessionsModule,
