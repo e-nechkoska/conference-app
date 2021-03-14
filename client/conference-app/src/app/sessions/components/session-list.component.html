@@ -1,4 +1,6 @@
-<ca-session
+<ca-session-list-item
   *ngFor="let session of sessions"
-  [session]="session">
-</ca-session>
+  [selected]="isSelected(session)"
+  [session]="session"
+  (click)="select(session)">
+</ca-session-list-item>

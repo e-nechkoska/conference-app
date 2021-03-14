@@ -1,3 +1,13 @@
 <h4>Sessions</h4>
 
-<ca-session-list [sessions]="allSessions$ | async"></ca-session-list>
+<div class="content">
+  <ca-session-list
+    [sessions]="sessions$ | async"
+    [selectedSession]="selectedSession$ | async"
+    (selectionChanged)="onSelectionChanged($event)">
+  </ca-session-list>
+
+  <ca-selected-session
+    [session]="selectedSession$ | async">
+  </ca-selected-session>
+</div>

@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  border: 1px solid #64b813;
+  padding: 10px;
+  background: #f1ca3c;
+}
+
+:host:hover {
+  background: #d4b20a;
+}
+
+h4 {
+  padding: 0;
+  margin: 0;
+}
+
+:host.selected {
+  background: crimson;
+}

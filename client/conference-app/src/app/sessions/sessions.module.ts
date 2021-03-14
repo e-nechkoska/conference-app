@@ -5,13 +5,15 @@ import { SessionsService } from './services/sessions.service';
 import { SessionListComponent } from './components/session-list.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { SessionComponent } from './components/session.component';
+import { SessionListItemComponent } from './components/session-list-item.component';
+import { SelectedSessionComponent } from './components/selected-session.component';
 
 @NgModule({
   declarations: [
     SessionsPageComponent,
     SessionListComponent,
-    SessionComponent
+    SessionListItemComponent,
+    SelectedSessionComponent
   ],
   providers: [
     SessionsService
