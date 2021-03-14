@@ -1,6 +1,6 @@
 export interface Session {
-  sessionId: number;
-  sessionName: string;
-  sessionDescription: string;
-  sessionLength: number;
+  session_id: number;
+  session_name: string;
+  session_description: string;
+  session_length: number;
 }
