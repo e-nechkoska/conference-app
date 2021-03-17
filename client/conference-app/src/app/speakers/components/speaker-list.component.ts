@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Speaker } from '../models/speaker';
 
 @Component({
@@ -8,4 +8,14 @@ import { Speaker } from '../models/speaker';
 })
 export class SpeakerListComponent {
   @Input() speakers: Speaker[];
+  @Input() selectedSpeaker: Speaker;
+  @Output() selectionChanged = new EventEmitter<Speaker>();
+
+  select(speaker: Speaker) {
+    this.selectionChanged.emit(speaker);
+  }
+
+  isSelected(speaker: Speaker) {
+    return this.selectedSpeaker === speaker;
+  }
 }

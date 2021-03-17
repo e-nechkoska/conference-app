@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { Speaker } from '../models/speaker';
 
 @Component({
@@ -8,4 +8,7 @@ import { Speaker } from '../models/speaker';
 })
 export class SpeakerComponent {
   @Input() speaker: Speaker;
+  @Input()
+  @HostBinding('class.selected')
+  selected = false;
 }

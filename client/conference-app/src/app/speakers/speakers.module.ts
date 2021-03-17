@@ -6,12 +6,14 @@ import { SpeakerListComponent } from './components/speaker-list.component';
 import { CommonModule } from '@angular/common';
 import { SpeakerComponent } from './components/speaker.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SelectedSpeakerComponent } from './components/selected-speaker.component';
 
 @NgModule({
   declarations: [
     SpeakersPageComponent,
     SpeakerListComponent,
-    SpeakerComponent
+    SpeakerComponent,
+    SelectedSpeakerComponent
   ],
   providers: [
     SpeakersService

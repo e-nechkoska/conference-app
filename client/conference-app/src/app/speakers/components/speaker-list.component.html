@@ -1,4 +1,6 @@
 <ca-speaker
   *ngFor="let speaker of speakers"
-  [speaker]="speaker">
+  [speaker]="speaker"
+  [selected]="isSelected(speaker)"
+  (click)="select(speaker)">
 </ca-speaker>

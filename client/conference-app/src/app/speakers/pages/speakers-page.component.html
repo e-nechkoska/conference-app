@@ -1,3 +1,13 @@
 <h4>Speakers</h4>
 
-<ca-speaker-list [speakers]="allSpeakers$ | async"></ca-speaker-list>
+<div class="content">
+  <ca-speaker-list
+    [speakers]="speakers$ | async"
+    [selectedSpeaker]="selectedSpeaker$ | async"
+    (selectionChanged)="onSelectionChanged($event)">
+  </ca-speaker-list>
+
+  <ca-selected-speaker
+    [speaker]="selectedSpeaker$ | async">
+  </ca-selected-speaker>
+</div>
