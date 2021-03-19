@@ -2,12 +2,12 @@
 
 <div class="content">
   <ca-session-list
-    [sessions]="sessions$ | async"
+    [sessions]="sessions"
     [selectedSession]="selectedSession"
     (selectionChanged)="onSelectionChanged($event)">
   </ca-session-list>
 
   <ca-selected-session
-    [session]="selectedSession$ | async">
+    [session]="selectedSession">
   </ca-selected-session>
 </div>
