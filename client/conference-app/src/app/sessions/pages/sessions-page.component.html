@@ -8,6 +8,7 @@
   </ca-session-list>
 
   <ca-selected-session
-    [session]="selectedSession">
+    [session]="selectedSession"
+    (deleted)="onSessionDeleted($event)">
   </ca-selected-session>
 </div>

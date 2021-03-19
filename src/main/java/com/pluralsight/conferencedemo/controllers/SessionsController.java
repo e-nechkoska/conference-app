@@ -1,7 +1,6 @@
 package com.pluralsight.conferencedemo.controllers;
 
 import com.pluralsight.conferencedemo.models.Session;
-import com.pluralsight.conferencedemo.models.Speaker;
 import com.pluralsight.conferencedemo.repositories.SessionRepository;
 import com.pluralsight.conferencedemo.repositories.SpeakerRepository;
 import org.springframework.beans.BeanUtils;
@@ -46,14 +45,6 @@ public class SessionsController {
     @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
     public void delete(@PathVariable Long id) {
         // TODO: Delete children records for sessions
-        Session session = sessionRepository.getOne(id);
-        for (Speaker speaker : session.getSpeakers()) {
-            if (speaker.getSessions().size() == 1) {
-                speakerRepository.delete(speaker);
-            } else {
-                speaker.getSessions().remove(session);
-            }
-        }
         sessionRepository.deleteById(id);
     }
 

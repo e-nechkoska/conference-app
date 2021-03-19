@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Session } from '../models/session';
 import { ActivatedRoute } from '@angular/router';
+import { SessionsService } from '../services/sessions.service';
 
 @Component({
   selector: 'ca-sessions',
@@ -11,7 +12,7 @@ export class SessionsPageComponent implements OnInit {
   sessions: Session[];
   selectedSession: Session;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private sessionsService: SessionsService) {
   }
 
   ngOnInit() {
@@ -22,4 +23,13 @@ export class SessionsPageComponent implements OnInit {
   onSelectionChanged(session: Session) {
     this.selectedSession = session;
   }
+
+  onSessionDeleted(session: Session) {
+    this.sessionsService.delete(session).subscribe(() => {
+      this.sessions = this.sessions.filter(s => s.session_id !== session.session_id);
+      this.selectedSession = this.sessions[0];
+    });
+
+  }
+
 }

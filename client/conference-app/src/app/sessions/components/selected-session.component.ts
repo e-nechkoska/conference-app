@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Session } from '../models/session';
 
 @Component({
@@ -8,4 +8,14 @@ import { Session } from '../models/session';
 })
 export class SelectedSessionComponent {
   @Input() session: Session;
+
+  @Output() deleted = new EventEmitter<Session>()
+
+  onEdit(event) {
+    console.log(event)
+  }
+
+  onDelete() {
+    this.deleted.emit(this.session);
+  }
 }
