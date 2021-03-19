@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Session } from '../models/session';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SessionsService } from '../services/sessions.service';
 
 @Component({
@@ -12,22 +12,34 @@ export class SessionsPageComponent implements OnInit {
   sessions: Session[];
   selectedSession: Session;
 
-  constructor(private route: ActivatedRoute, private sessionsService: SessionsService) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private sessionsService: SessionsService
+  ) {
   }
 
   ngOnInit() {
-    this.sessions = this.route.snapshot.data.sessions;
-    this.selectedSession = this.sessions[0];
+    this.sessions = this.activatedRoute.snapshot.data.sessions;
+    this.activatedRoute.queryParams.subscribe(({sessionId}) => {
+      this.selectedSession = !sessionId
+        ? this.sessions[0]
+        : this.sessions.find(s => s.session_id === Number(sessionId));
+    });
   }
 
-  onSelectionChanged(session: Session) {
-    this.selectedSession = session;
+  navigateToSession(session: Session) {
+    this.router.navigate(['sessions'], {
+      queryParams: {
+        sessionId: session.session_id
+      }
+    });
   }
 
   onSessionDeleted(session: Session) {
     this.sessionsService.delete(session).subscribe(() => {
       this.sessions = this.sessions.filter(s => s.session_id !== session.session_id);
-      this.selectedSession = this.sessions[0];
+      this.navigateToSession(this.sessions[0]);
     });
 
   }

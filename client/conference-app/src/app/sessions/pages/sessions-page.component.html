@@ -4,7 +4,7 @@
   <ca-session-list
     [sessions]="sessions"
     [selectedSession]="selectedSession"
-    (selectionChanged)="onSelectionChanged($event)">
+    (selectionChanged)="navigateToSession($event)">
   </ca-session-list>
 
   <ca-selected-session
