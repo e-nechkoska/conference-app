@@ -3,7 +3,7 @@
 <div class="content">
   <ca-session-list
     [sessions]="sessions$ | async"
-    [selectedSession]="selectedSession$ | async"
+    [selectedSession]="selectedSession"
     (selectionChanged)="onSelectionChanged($event)">
   </ca-session-list>
 

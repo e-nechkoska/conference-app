@@ -14,12 +14,8 @@ export class SessionsService {
   constructor(private http: HttpClient) {
   }
 
-  fetchAllSessions() {
-    // TODO refactor to use resolvers
-    this.http.get<Session[]>('server/api/v1/sessions').subscribe(sessions => {
-      this.allSessions.next(sessions);
-      this.selectedSession.next(sessions[0]);
-    });
+  fetchAllSessions(): Observable<Session[]> {
+    return this.http.get<Session[]>('server/api/v1/sessions');
   }
 
 }

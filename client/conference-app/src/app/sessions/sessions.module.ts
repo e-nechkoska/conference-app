@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { SessionListItemComponent } from './components/session-list-item.component';
 import { SelectedSessionComponent } from './components/selected-session.component';
+import { SessionsResolver } from './resolvers/sessions.resolver';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SelectedSessionComponent } from './components/selected-session.componen
     SelectedSessionComponent
   ],
   providers: [
-    SessionsService
+    SessionsService,
+    SessionsResolver
   ],
   imports: [
     CommonModule,
