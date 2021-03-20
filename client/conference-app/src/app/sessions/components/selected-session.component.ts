@@ -9,10 +9,11 @@ import { Session } from '../models/session';
 export class SelectedSessionComponent {
   @Input() session: Session;
 
-  @Output() deleted = new EventEmitter<Session>()
+  @Output() deleted = new EventEmitter<Session>();
+  @Output() edited = new EventEmitter<Session>();
 
-  onEdit(event) {
-    console.log(event)
+  onEdit() {
+    this.edited.emit(this.session);
   }
 
   onDelete() {

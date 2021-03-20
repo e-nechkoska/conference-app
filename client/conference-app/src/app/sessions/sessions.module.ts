@@ -8,21 +8,29 @@ import { HttpClientModule } from '@angular/common/http';
 import { SessionListItemComponent } from './components/session-list-item.component';
 import { SelectedSessionComponent } from './components/selected-session.component';
 import { SessionsResolver } from './resolvers/sessions.resolver';
+import { SessionPageComponent } from './pages/session-page.component';
+import { SessionFormComponent } from './components/session-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SessionResolver } from './resolvers/session.resolver';
 
 @NgModule({
   declarations: [
     SessionsPageComponent,
     SessionListComponent,
     SessionListItemComponent,
-    SelectedSessionComponent
+    SelectedSessionComponent,
+    SessionPageComponent,
+    SessionFormComponent
   ],
   providers: [
     SessionsService,
-    SessionsResolver
+    SessionsResolver,
+    SessionResolver
   ],
   imports: [
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
     SessionsRoutingModule
   ]
 })

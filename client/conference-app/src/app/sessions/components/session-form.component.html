@@ -1,0 +1,39 @@
+<form [formGroup]="sessionForm" (submit)="onSubmit()">
+  <label for="sessionName">
+    Name:
+    <input
+      id="sessionName"
+      placeholder="Session name"
+      formControlName="name"
+    />
+  </label>
+
+  <label for="sessionDescription">
+    Description:
+    <textarea
+      id="sessionDescription"
+      formControlName="description"
+    >
+    </textarea>
+  </label>
+
+  <label for="sessionLength">
+    Length:
+    <input
+      id="sessionLength"
+      placeholder="Session length"
+      type="number"
+      formControlName="length"
+    />
+  </label>
+
+  <div>
+    <button type="button" (click)="onCancel()">Cancel</button>
+    <button
+      type="submit"
+      [disabled]="sessionForm.invalid"
+    >
+      Save
+    </button>
+  </div>
+</form>

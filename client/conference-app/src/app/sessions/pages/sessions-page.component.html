@@ -9,6 +9,7 @@
 
   <ca-selected-session
     [session]="selectedSession"
-    (deleted)="onSessionDeleted($event)">
+    (deleted)="onSessionDeleted($event)"
+    (edited)="onSessionEdit($event)">
   </ca-selected-session>
 </div>
