@@ -15,6 +15,10 @@ export class AppComponent {
     {
       name: 'Sessions',
       link: 'sessions'
+    },
+    {
+      name: 'Attendees',
+      link: 'attendees'
     }
   ];
 }

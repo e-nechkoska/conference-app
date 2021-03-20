@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { SpeakersModule } from './speakers/speakers.module';
 import { SessionsModule } from './sessions/sessions.module';
 import { SharedModule } from './shared/shared.module';
+import { AttendeesModule } from './attendees/attendees.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
     CoreModule,
     SpeakersModule,
     SessionsModule,
+    AttendeesModule,
     AppRoutingModule
   ],
   providers: [
