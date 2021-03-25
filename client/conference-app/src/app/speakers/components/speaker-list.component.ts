@@ -9,6 +9,7 @@ import { Speaker } from '../models/speaker';
 export class SpeakerListComponent {
   @Input() speakers: Speaker[];
   @Input() selectedSpeaker: Speaker;
+
   @Output() selectionChanged = new EventEmitter<Speaker>();
 
   select(speaker: Speaker) {

@@ -1,23 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Speaker } from '../models/speaker';
 
 @Injectable()
 export class SpeakersService {
-  allSpeakers: Subject<Speaker[]> = new Subject<Speaker[]>();
-  allSpeakers$: Observable<Speaker[]> = this.allSpeakers.asObservable();
-
-  selectedSpeaker: Subject<Speaker> = new BehaviorSubject<Speaker>({} as Speaker);
-  selectedSpeaker$: Observable<Speaker> = this.selectedSpeaker.asObservable();
-
   constructor(private http: HttpClient) {
   }
 
-  fetchAllSpeakers() {
-    return this.http.get<Speaker[]>('/server/api/v1/speakers').subscribe(speakers => {
-      this.allSpeakers.next(speakers);
-      this.selectedSpeaker.next(speakers[0]);
-    });
+  fetchAllSpeakers(): Observable<Speaker[]> {
+    return this.http.get<Speaker[]>('/server/api/v1/speakers');
+  }
+
+  delete(speaker: Speaker) {
+    return this.http.delete<Speaker>(`/server/api/v1/speakers/${speaker.speaker_id}`);
+  }
+
+  fetchSpeaker(speakerId: number): Observable<Speaker> {
+    return this.http.get<Speaker>(`/server/api/v1/speakers/${speakerId}`);
+  }
+
+  updateSpeaker(speaker: Speaker) {
+    return this.http.put<Speaker>(`/server/api/v1/speakers/${speaker.speaker_id}`, speaker);
   }
 }

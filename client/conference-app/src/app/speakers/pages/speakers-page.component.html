@@ -2,12 +2,15 @@
 
 <div class="content">
   <ca-speaker-list
-    [speakers]="speakers$ | async"
-    [selectedSpeaker]="selectedSpeaker$ | async"
-    (selectionChanged)="onSelectionChanged($event)">
+    [speakers]="speakers"
+    [selectedSpeaker]="selectedSpeaker"
+    (selectionChanged)="navigateToSpeaker($event)">
   </ca-speaker-list>
 
   <ca-selected-speaker
-    [speaker]="selectedSpeaker$ | async">
+    [speaker]="selectedSpeaker"
+    (deleted)="onSpeakerDeleted($event)"
+    (edited)="onSpeakerEdited($event)"
+  >
   </ca-selected-speaker>
 </div>

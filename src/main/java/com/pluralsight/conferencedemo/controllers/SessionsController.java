@@ -28,7 +28,7 @@ public class SessionsController {
 
     @GetMapping
     public List<Session> list() {
-       return sessionRepository.findAll();
+        return sessionRepository.findAll();
     }
 
     @GetMapping

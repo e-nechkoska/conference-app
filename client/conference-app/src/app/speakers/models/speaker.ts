@@ -5,5 +5,5 @@ export interface Speaker {
   "title": string,
   "company": string,
   "speaker_bio": string,
-  "speaker_photo": any // TODO ?
+  // "speaker_photo": any // TODO ?
 }

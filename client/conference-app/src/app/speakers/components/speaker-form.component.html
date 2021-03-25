@@ -1,0 +1,53 @@
+<form [formGroup]="speakerForm" (submit)="onSpeakerSubmitted()">
+  <div>
+    <label for="firstName">
+      <input
+        id="firstName"
+        placeholder="First name:"
+        formControlName="firstName"
+      >
+    </label>
+  </div>
+  <div>
+    <label for="lastName">
+      <input
+        id="lastName"
+        placeholder="Last name:"
+        formControlName="lastName"
+      >
+    </label>
+  </div>
+  <div>
+    <label for="title">
+      <input
+        id="title"
+        placeholder="Title:"
+        formControlName="title"
+      >
+    </label>
+  </div>
+  <div>
+    <label for="company">
+      <input
+        id="company"
+        placeholder="Company:"
+        formControlName="company"
+      >
+    </label>
+  </div>
+  <div>
+    <label for="bio">
+      <textarea
+        id="bio"
+        cols="30"
+        rows="10"
+        placeholder="Bio:"
+        formControlName="bio"
+      ></textarea>
+    </label>
+  </div>
+  <div>
+    <button type="submit">Save</button>
+    <button type="button" (click)="onCanceledSpeaker()">Cancel</button>
+  </div>
+</form>

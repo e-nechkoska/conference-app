@@ -1,6 +1,5 @@
 package com.pluralsight.conferencedemo.controllers;
 
-import com.pluralsight.conferencedemo.models.Session;
 import com.pluralsight.conferencedemo.models.Speaker;
 import com.pluralsight.conferencedemo.repositories.SessionRepository;
 import com.pluralsight.conferencedemo.repositories.SpeakerRepository;
@@ -46,13 +45,13 @@ public class SpeakerController {
     @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
     public void delete(@PathVariable Long id) {
         Speaker speaker = speakerRepository.getOne(id);
-        for (Session session : speaker.getSessions()) {
-            if (session.getSpeakers().size() == 1) {
-                sessionRepository.delete(session);
-            } else {
-                session.getSpeakers().remove(speaker);
-            }
-        }
+//        for (Session session : speaker.getSessions()) {
+//            if (session.getSpeakers().size() == 1) {
+//                sessionRepository.delete(session);
+//            } else {
+//                session.getSpeakers().remove(speaker);
+//            }
+//        }
         speakerRepository.deleteById(id);
     }
 
