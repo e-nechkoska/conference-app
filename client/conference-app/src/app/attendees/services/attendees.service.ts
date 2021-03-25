@@ -11,4 +11,8 @@ export class AttendeesService {
   fetchAllAttendees(): Observable<Attendee[]>{
     return this.http.get<Attendee[]>('server/api/v1/attendees');
   }
+
+  fetchAttendee(attendeeId: number): Observable<Attendee> {
+    return this.http.get<Attendee>(`server/api/v1/attendees/${attendeeId}`);
+  }
 }

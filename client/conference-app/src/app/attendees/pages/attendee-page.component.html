@@ -1,0 +1,36 @@
+<form [formGroup]="attendeeForm">
+  <div>
+    <label for="firstName">
+      <input id="firstName" placeholder="First name:" formControlName="firstName" (click)="onFirstNameClick()">
+    </label>
+  </div>
+  <div>
+    <label for="lastName">
+      <input id="lastName" placeholder="Last name:" formControlName="lastName">
+    </label>
+  </div>
+  <div>
+    <label for="title">
+      <input id="title" placeholder="Title:" formControlName="title">
+    </label>
+  </div>
+  <div>
+    <label for="company">
+      <input id="company" placeholder="Company:" formControlName="company">
+    </label>
+  </div>
+  <div>
+    <label for="email">
+      <input id="email" placeholder="Email:" formControlName="email">
+    </label>
+  </div>
+  <div>
+    <label for="phoneNumber">
+      <input id="phoneNumber" placeholder="Phone number:" formControlName="phoneNumber">
+    </label>
+  </div>
+  <div>
+    <button>Save</button>
+    <button type="button">Delete</button>
+  </div>
+</form>

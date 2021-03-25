@@ -1,1 +1,7 @@
 <h4>Attendees</h4>
+<ca-attendee-list
+  [attendees]="attendees"
+  [selectedAttendee]="selectedAttendee"
+  (selectionChanged)="onSelect($event)"
+>
+</ca-attendee-list>

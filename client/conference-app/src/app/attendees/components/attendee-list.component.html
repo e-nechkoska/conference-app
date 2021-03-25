@@ -1,0 +1,8 @@
+<ca-attendee-list-item
+  *ngFor="let attendee of attendees"
+  (click)="select(attendee)"
+  [attendee]="attendee"
+  [selected]="isSelected(attendee)"
+>
+  {{attendee.first_name}} {{attendee.last_name}}
+</ca-attendee-list-item>
