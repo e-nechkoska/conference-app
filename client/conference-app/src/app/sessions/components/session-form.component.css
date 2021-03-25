@@ -1,0 +1,11 @@
+.form {
+  padding: 10px;
+  margin: 10px;
+}
+
+#sessionName, #sessionDescription, #sessionLength {
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 30%;
+}

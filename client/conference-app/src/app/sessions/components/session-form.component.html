@@ -1,31 +1,44 @@
 <form [formGroup]="sessionForm" (submit)="onSubmit()">
-  <label for="sessionName">
-    Name:
-    <input
-      id="sessionName"
-      placeholder="Session name"
-      formControlName="name"
-    />
-  </label>
+  <div>
+    <label for="sessionName">
+      <div>
+        Name:
+      </div>
+      <input
+        id="sessionName"
+        placeholder="Session name"
+        formControlName="name"
+      />
+    </label>
+  </div>
 
-  <label for="sessionDescription">
-    Description:
-    <textarea
-      id="sessionDescription"
-      formControlName="description"
-    >
+  <div>
+    <label for="sessionDescription">
+      <div>
+        Description:
+      </div>
+      <textarea
+        id="sessionDescription"
+        placeholder="Description:"
+        formControlName="description"
+      >
     </textarea>
-  </label>
+    </label>
+  </div>
 
-  <label for="sessionLength">
-    Length:
-    <input
-      id="sessionLength"
-      placeholder="Session length"
-      type="number"
-      formControlName="length"
-    />
-  </label>
+  <div>
+    <label for="sessionLength">
+      <div>
+        Length
+      </div>
+      <input
+        id="sessionLength"
+        placeholder="Session length"
+        type="number"
+        formControlName="length"
+      />
+    </label>
+  </div>
 
   <div>
     <button type="button" (click)="onCancel()">Cancel</button>

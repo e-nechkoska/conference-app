@@ -4,7 +4,8 @@ import { Session } from '../models/session';
 
 @Component({
   selector: 'ca-session-form',
-  templateUrl: './session-form.component.html'
+  templateUrl: './session-form.component.html',
+  styleUrls: ['./session-form.component.css']
 })
 export class SessionFormComponent implements OnInit {
   @Input() session: Session;
