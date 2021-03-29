@@ -3,6 +3,7 @@ import { Attendee } from '../models/attendee';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { group } from '@angular/animations';
+import { AttendeesService } from '../services/attendees.service';
 
 @Component({
   selector: 'ca-attendee-page',
@@ -13,6 +14,8 @@ export class AttendeePageComponent implements OnInit {
   attendeeForm: FormGroup;
 
   constructor(
+    private router: Router,
+    private attendeesService: AttendeesService,
     private activatedRoute: ActivatedRoute,
     private fb: FormBuilder) {
   }
@@ -35,5 +38,11 @@ export class AttendeePageComponent implements OnInit {
 
   onFirstNameClick() {
     console.log("first name clicked!")
+  }
+
+  onClick() {
+    console.log("delete clicked");
+    this.attendeesService.deleteAttendee(this.activatedRoute.snapshot.data.attendee.attendeeId);
+    this.router.navigate(['attendees']);
   }
 }

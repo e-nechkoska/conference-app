@@ -15,4 +15,8 @@ export class AttendeesService {
   fetchAttendee(attendeeId: number): Observable<Attendee> {
     return this.http.get<Attendee>(`server/api/v1/attendees/${attendeeId}`);
   }
+
+  deleteAttendee(attendeeId: number) {
+    return this.http.delete(`server/api/v1/attendees/${attendeeId}`);
+  }
 }
