@@ -36,13 +36,24 @@ export class AttendeePageComponent implements OnInit {
     })
   }
 
-  onFirstNameClick() {
-    console.log("first name clicked!")
+  onDelete() {
+    this.attendeesService.deleteAttendee(this.attendee).subscribe(() => {
+      this.router.navigate(['attendees']);
+    })
   }
 
-  onClick() {
-    console.log("delete clicked");
-    this.attendeesService.deleteAttendee(this.activatedRoute.snapshot.data.attendee.attendeeId);
-    this.router.navigate(['attendees']);
+  onSave() {
+    const updatedAttendee: Attendee = {
+      attendee_id: this.attendee.attendee_id,
+      first_name: this.attendeeForm.value.firstName,
+      last_name: this.attendeeForm.value.lastName,
+      title: this.attendeeForm.value.title,
+      company: this.attendeeForm.value.company,
+      email: this.attendeeForm.value.email,
+      phone_number: this.attendeeForm.value.phoneNumber
+    }
+    this.attendeesService.updateAttendee(updatedAttendee).subscribe(() => {
+      this.router.navigate(['attendees']);
+    })
   }
 }

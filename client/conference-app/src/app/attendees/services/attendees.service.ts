@@ -16,7 +16,11 @@ export class AttendeesService {
     return this.http.get<Attendee>(`server/api/v1/attendees/${attendeeId}`);
   }
 
-  deleteAttendee(attendeeId: number) {
-    return this.http.delete(`server/api/v1/attendees/${attendeeId}`);
+  deleteAttendee(attendee: Attendee) {
+    return this.http.delete(`server/api/v1/attendees/${attendee.attendee_id}`);
+  }
+
+  updateAttendee(attendee: Attendee) {
+    return this.http.put(`server/api/v1/attendees/${attendee.attendee_id}`, attendee);
   }
 }

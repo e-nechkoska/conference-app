@@ -1,7 +1,7 @@
-<form [formGroup]="attendeeForm">
+<form [formGroup]="attendeeForm" (submit)="onSave()">
   <div>
     <label for="firstName">
-      <input id="firstName" placeholder="First name:" formControlName="firstName" (click)="onFirstNameClick()">
+      <input id="firstName" placeholder="First name:" formControlName="firstName">
     </label>
   </div>
   <div>
@@ -30,7 +30,7 @@
     </label>
   </div>
   <div>
-    <button>Save</button>
-    <button type="button" (click)="onClick()">Delete</button>
+    <button type="submit">Save</button>
+    <button type="button" (click)="onDelete()">Delete</button>
   </div>
 </form>
